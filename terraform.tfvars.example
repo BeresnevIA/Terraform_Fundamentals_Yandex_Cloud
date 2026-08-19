@@ -1,0 +1,31 @@
+yc_cloud_id       = "ваш_cloud_id"
+yc_folder_id      = "ваша_folder_id"
+yc_zone           = "ru-central1-a"
+subnet_id         = "ваш_subnet_id"
+image_family      = "ubuntu-2204-lts"
+
+vms_resources = {
+  web = {
+    cores         = 2
+    memory        = 1
+    core_fraction = 50
+    disk_size     = 10
+    disk_type     = "network-hdd"
+    platform_id   = "standard-v3"
+    zone          = "ru-central1-a"
+  }
+  db = {
+    cores         = 2
+    memory        = 2
+    core_fraction = 50
+    disk_size     = 10
+    disk_type     = "network-hdd"
+    platform_id   = "standard-v3"
+    zone          = "ru-central1-a"
+  }
+}
+
+vms_metadata = {
+  serial-port-enable = 1
+  ssh-keys           = "ubuntu:ваш_публичный_ssh_ключ"
+}
